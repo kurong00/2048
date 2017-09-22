@@ -10,6 +10,7 @@ public class CellStyle
     public Color textColor;
 }
 
-public class CellManager : Singleton<CellManager> {
+public class CellManager : Singleton<CellManager>
+{
     public CellStyle[] cell;
 }
