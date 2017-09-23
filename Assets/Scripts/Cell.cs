@@ -42,9 +42,10 @@ public class Cell : MonoBehaviour {
 
     void GetCellStyle(int index)
     {
-        cellBackground.color = cellManager.cell[index].cellColor;
-        cellText.color = cellManager.cell[index].textColor;
-        cellText.text = cellManager.cell[index].number.ToString();
+        cellBackground.color = cellManager.cellStyle[index].cellColor;
+        cellText.color = cellManager.cellStyle[index].textColor;
+        cellText.text = cellManager.cellStyle[index].number.ToString();
+        Debug.Log(cellManager.cellStyle[index].textColor);
     }
 
     void ChangeCellStyle(int index)
@@ -53,9 +54,11 @@ public class Cell : MonoBehaviour {
         {
             case 2:
                 GetCellStyle(0);
+                Debug.Log("00");
                 break;
             case 4:
                 GetCellStyle(1);
+                Debug.Log("11");
                 break;
             case 8:
                 GetCellStyle(2);

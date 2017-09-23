@@ -624,7 +624,6 @@ GameObject:
   - component: {fileID: 316383460}
   - component: {fileID: 316383462}
   - component: {fileID: 316383461}
-  - component: {fileID: 316383463}
   - component: {fileID: 316383464}
   m_Layer: 5
   m_Name: cell
@@ -686,19 +685,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 316383459}
---- !u!114 &316383463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 316383459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3c458ed975bfb444a379d3fdbe13f4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  row: 0
-  col: 0
 --- !u!114 &316383464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -921,13 +907,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f78cd87e0a3409489ac45691a032237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cell:
+  cellStyle:
   - number: 2
-    cellColor: {r: 0, g: 0, b: 0, a: 0}
-    textColor: {r: 1, g: 0.85294116, b: 0.85294116, a: 0}
+    cellColor: {r: 0.8455882, g: 0.7978373, b: 0.7461072, a: 0}
+    textColor: {r: 0.49411768, g: 0.427451, b: 0.3137255, a: 0}
   - number: 4
-    cellColor: {r: 0, g: 0, b: 0, a: 0}
-    textColor: {r: 0, g: 0, b: 0, a: 0}
+    cellColor: {r: 0.92549026, g: 0.6, b: 0.3529412, a: 0}
+    textColor: {r: 1, g: 1, b: 1, a: 0}
   - number: 8
     cellColor: {r: 0, g: 0, b: 0, a: 0}
     textColor: {r: 0, g: 0, b: 0, a: 0}
@@ -2688,7 +2674,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2
+  m_Text: '4
+
+'
 --- !u!222 &1288743723
 CanvasRenderer:
   m_ObjectHideFlags: 0

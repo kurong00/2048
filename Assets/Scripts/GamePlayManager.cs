@@ -21,17 +21,17 @@ public class GamePlayManager : Singleton<GamePlayManager> {
             {
                 cellList[temp].row = i;
                 cellList[temp].col = j;
+                cellList[temp].Number = 0;
+                cell[i, j] = cellList[temp];
+                emptyCell.Add(cellList[temp]);
                 temp++;
             }
-        }
-        foreach(Cell t in cellList)
-        {
-            t.Number = 4;
         }
     }
 
     void InitEmptyCellList()
     {
+        Debug.Log(emptyCell.Count+"aaaaa");
         if (emptyCell.Count > 0)
         {
             int index = Random.Range(0, emptyCell.Count);
@@ -40,6 +40,7 @@ public class GamePlayManager : Singleton<GamePlayManager> {
                 emptyCell[index].Number = 4;
             else
                 emptyCell[index].Number = 2;
+            Debug.Log(index);
             emptyCell.RemoveAt(index);
         }
     }
@@ -49,7 +50,6 @@ public class GamePlayManager : Singleton<GamePlayManager> {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             InitEmptyCellList();
-            Debug.Log("aaaa");
         }
     }
 
