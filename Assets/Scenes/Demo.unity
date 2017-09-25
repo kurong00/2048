@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93725497, g: 0.89019614, b: 0.83921576, a: 1}
+  m_Color: {r: 0.8897059, g: 0.87086505, b: 0.85045415, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -525,7 +525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93725497, g: 0.89019614, b: 0.83921576, a: 1}
+  m_Color: {r: 0.875, g: 0.7977941, b: 0.7141544, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -664,7 +664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93725497, g: 0.89019614, b: 0.83921576, a: 1}
+  m_Color: {r: 0.8897059, g: 0.87086505, b: 0.85045415, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -908,45 +908,97 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellStyle:
-  - number: 2
-    cellColor: {r: 0.8455882, g: 0.7978373, b: 0.7461072, a: 0}
-    textColor: {r: 0.49411768, g: 0.427451, b: 0.3137255, a: 0}
-  - number: 4
-    cellColor: {r: 0.92549026, g: 0.6, b: 0.3529412, a: 0}
-    textColor: {r: 1, g: 1, b: 1, a: 0}
-  - number: 8
-    cellColor: {r: 0, g: 0, b: 0, a: 0}
-    textColor: {r: 0, g: 0, b: 0, a: 0}
-  - number: 16
-    cellColor: {r: 0, g: 0, b: 0, a: 0}
-    textColor: {r: 0, g: 0, b: 0, a: 0}
-  - number: 32
-    cellColor: {r: 0, g: 0, b: 0, a: 0}
-    textColor: {r: 0, g: 0, b: 0, a: 0}
-  - number: 64
-    cellColor: {r: 0, g: 0, b: 0, a: 0}
-    textColor: {r: 0, g: 0, b: 0, a: 0}
-  - number: 128
-    cellColor: {r: 0, g: 0, b: 0, a: 0}
-    textColor: {r: 0, g: 0, b: 0, a: 0}
-  - number: 256
-    cellColor: {r: 0, g: 0, b: 0, a: 0}
-    textColor: {r: 0, g: 0, b: 0, a: 0}
-  - number: 512
-    cellColor: {r: 0, g: 0, b: 0, a: 0}
-    textColor: {r: 0, g: 0, b: 0, a: 0}
-  - number: 1024
-    cellColor: {r: 0, g: 0, b: 0, a: 0}
-    textColor: {r: 0, g: 0, b: 0, a: 0}
-  - number: 2048
-    cellColor: {r: 0, g: 0, b: 0, a: 0}
-    textColor: {r: 0, g: 0, b: 0, a: 0}
-  - number: 4096
-    cellColor: {r: 0, g: 0, b: 0, a: 0}
-    textColor: {r: 0, g: 0, b: 0, a: 0}
-  - number: 8192
-    cellColor: {r: 0, g: 0, b: 0, a: 0}
-    textColor: {r: 0, g: 0, b: 0, a: 0}
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
 --- !u!1 &532398397
 GameObject:
   m_ObjectHideFlags: 0
@@ -1763,7 +1815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93725497, g: 0.89019614, b: 0.83921576, a: 1}
+  m_Color: {r: 0.8897059, g: 0.87086505, b: 0.85045415, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2350,7 +2402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93725497, g: 0.89019614, b: 0.83921576, a: 1}
+  m_Color: {r: 0.71323526, g: 0.62113893, b: 0.52443767, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2421,7 +2473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93725497, g: 0.89019614, b: 0.83921576, a: 1}
+  m_Color: {r: 0.8897059, g: 0.87086505, b: 0.85045415, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2505,7 +2557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93725497, g: 0.89019614, b: 0.83921576, a: 1}
+  m_Color: {r: 0.8897059, g: 0.87086505, b: 0.85045415, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2654,7 +2706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.49264705, g: 0.42810237, b: 0.31514922, a: 1}
+  m_Color: {r: 0.49411768, g: 0.427451, b: 0.3137255, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2768,6 +2820,7 @@ GameObject:
   - component: {fileID: 1304820013}
   - component: {fileID: 1304820012}
   - component: {fileID: 1304820011}
+  - component: {fileID: 1304820014}
   m_Layer: 5
   m_Name: GameView
   m_TagString: Untagged
@@ -2865,6 +2918,109 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1304820009}
+--- !u!114 &1304820014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1304820009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f78cd87e0a3409489ac45691a032237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cellStyle:
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
+  - number: 0
+    cellColor:
+      serializedVersion: 2
+      rgba: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 0
 --- !u!1 &1339290832
 GameObject:
   m_ObjectHideFlags: 0
@@ -3306,7 +3462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93725497, g: 0.89019614, b: 0.83921576, a: 1}
+  m_Color: {r: 0.8897059, g: 0.87086505, b: 0.85045415, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3390,7 +3546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93725497, g: 0.89019614, b: 0.83921576, a: 1}
+  m_Color: {r: 0.8897059, g: 0.87086505, b: 0.85045415, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3474,7 +3630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93725497, g: 0.89019614, b: 0.83921576, a: 1}
+  m_Color: {r: 0.8897059, g: 0.87086505, b: 0.85045415, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3632,7 +3788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93725497, g: 0.89019614, b: 0.83921576, a: 1}
+  m_Color: {r: 0.8897059, g: 0.87086505, b: 0.85045415, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3995,7 +4151,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000038385, y: 0.0017724}
-  m_SizeDelta: {x: 386.7, y: 409.9}
+  m_SizeDelta: {x: 386.7, y: 410}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1757755367
 MonoBehaviour:
@@ -4243,7 +4399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93725497, g: 0.89019614, b: 0.83921576, a: 1}
+  m_Color: {r: 0.8897059, g: 0.87086505, b: 0.85045415, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4401,7 +4557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93725497, g: 0.89019614, b: 0.83921576, a: 1}
+  m_Color: {r: 0.8897059, g: 0.87086505, b: 0.85045415, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4485,7 +4641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93725497, g: 0.89019614, b: 0.83921576, a: 1}
+  m_Color: {r: 0.8897059, g: 0.87086505, b: 0.85045415, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4643,7 +4799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93725497, g: 0.89019614, b: 0.83921576, a: 1}
+  m_Color: {r: 0.8897059, g: 0.87086505, b: 0.85045415, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4801,7 +4957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93725497, g: 0.89019614, b: 0.83921576, a: 1}
+  m_Color: {r: 0.8897059, g: 0.87086505, b: 0.85045415, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4954,7 +5110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93725497, g: 0.89019614, b: 0.83921576, a: 1}
+  m_Color: {r: 0.8897059, g: 0.87086505, b: 0.85045415, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5038,7 +5194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93725497, g: 0.89019614, b: 0.83921576, a: 1}
+  m_Color: {r: 0.8897059, g: 0.87086505, b: 0.85045415, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

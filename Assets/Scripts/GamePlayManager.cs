@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class GamePlayManager : Singleton<GamePlayManager> {
 
-    Cell[,] cell = new Cell[4,4];
-    List<Cell> emptyCell = new List<Cell>();
+    Cell[,] allCells = new Cell[4,4];
+    List<Cell> emptyCells = new List<Cell>();
     void Start()
     {
         InitCell();
@@ -13,35 +12,39 @@ public class GamePlayManager : Singleton<GamePlayManager> {
 
     void InitCell()
     {
-        int temp = 0;
+        
         Cell[] cellList = GameObject.FindObjectsOfType<Cell>();
-        for(int i = 0; i < 4; i++)
-        {
+        /*for(int i = 0; i < 4; i++)
+        {int temp = 0;
             for(int j = 0; j < 4; j++)
             {
                 cellList[temp].row = i;
                 cellList[temp].col = j;
                 cellList[temp].Number = 0;
-                cell[i, j] = cellList[temp];
-                emptyCell.Add(cellList[temp]);
+                allCells[i, j] = cellList[temp];
+                emptyCells.Add(cellList[temp]);
                 temp++;
             }
+        }*/
+        foreach(Cell c in cellList)
+        {
+            c.Number = 0;
+            allCells[c.row, c.col] = c;
+            emptyCells.Add(c);
         }
     }
 
     void InitEmptyCellList()
     {
-        Debug.Log(emptyCell.Count+"aaaaa");
-        if (emptyCell.Count > 0)
+        if (emptyCells.Count > 0)
         {
-            int index = Random.Range(0, emptyCell.Count);
+            int index = Random.Range(0, emptyCells.Count);
             int random = Random.Range(0, 10);
             if (random == 0)
-                emptyCell[index].Number = 4;
+                emptyCells[index].Number = 4;
             else
-                emptyCell[index].Number = 2;
-            Debug.Log(index);
-            emptyCell.RemoveAt(index);
+                emptyCells[index].Number = 2;
+            emptyCells.RemoveAt(index);
         }
     }
 

@@ -10,7 +10,7 @@ public class Cell : MonoBehaviour {
     int number;
     Text cellText;
     Image cellBackground;
-    CellManager cellManager;
+    CellStyleHolder cellStyleHolder;
 
     public int Number
     {
@@ -23,12 +23,12 @@ public class Cell : MonoBehaviour {
             number = value;
             if (number == 0)
             {
-                SetCellCHide();
+                SetCellHide();
             }
             else
             {
                 ChangeCellStyle(number);
-                SetCellCVisual();
+                SetCellVisual();
             }
         }
     }
@@ -37,15 +37,14 @@ public class Cell : MonoBehaviour {
     {
         cellBackground = transform.GetChild(0).GetComponent<Image>();
         cellText = transform.GetChild(1).GetComponent<Text>();
-        cellManager = CellManager.Instance();
+        cellStyleHolder = CellStyleHolder.Instance();
     }
 
     void GetCellStyle(int index)
     {
-        cellBackground.color = cellManager.cellStyle[index].cellColor;
-        cellText.color = cellManager.cellStyle[index].textColor;
-        cellText.text = cellManager.cellStyle[index].number.ToString();
-        Debug.Log(cellManager.cellStyle[index].textColor);
+        cellBackground.color = cellStyleHolder.cellStyle[index].cellColor;
+        cellText.color = cellStyleHolder.cellStyle[index].textColor;
+        cellText.text = cellStyleHolder.cellStyle[index].number.ToString();
     }
 
     void ChangeCellStyle(int index)
@@ -54,11 +53,9 @@ public class Cell : MonoBehaviour {
         {
             case 2:
                 GetCellStyle(0);
-                Debug.Log("00");
                 break;
             case 4:
                 GetCellStyle(1);
-                Debug.Log("11");
                 break;
             case 8:
                 GetCellStyle(2);
@@ -94,7 +91,7 @@ public class Cell : MonoBehaviour {
                 GetCellStyle(12);
                 break;
             default:
-                Debug.Log("invalid number!");
+                Debug.LogError("invalid number!");
                 break;
         }
     }
@@ -108,13 +105,13 @@ public class Cell : MonoBehaviour {
 		
 	}
 
-    void SetCellCVisual()
+    void SetCellVisual()
     {
         cellText.enabled = true;
         cellBackground.enabled = true;
     }
 
-    void SetCellCHide()
+    void SetCellHide()
     {
         cellText.enabled = false;
         cellBackground.enabled = false;
