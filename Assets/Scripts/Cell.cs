@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class Cell : MonoBehaviour {
 
-
+    [HideInInspector]
+    public bool addNumber = false;
     public int row,col;
     int number;
     Text cellText;
@@ -115,5 +116,10 @@ public class Cell : MonoBehaviour {
     {
         cellText.enabled = false;
         cellBackground.enabled = false;
+    }
+
+    public void ResetAddNumberFlag()
+    {
+        addNumber = false;
     }
 }

@@ -7,6 +7,7 @@ public class GamePlayManager : Singleton<GamePlayManager> {
     List<Cell> emptyCells = new List<Cell>();
     List<Cell[]> cellRows = new List<Cell[]>();
     List<Cell[]> cellCols = new List<Cell[]>();
+
     void Start()
     {
         InitCell();
@@ -55,12 +56,20 @@ public class GamePlayManager : Singleton<GamePlayManager> {
     {
         for(int i = 0; i < lines.Length - 1; i++)
         {
-            Debug.Log(lines[i].Number+" i down");
-            Debug.Log(lines[i + 1].Number + " i+1 down");
             if (lines[i].Number == 0 && lines[i + 1].Number != 0)
             {
                 lines[i].Number = lines[i + 1].Number;
                 lines[i + 1].Number = 0;
+                return true;
+            }
+
+            if (lines[i].Number != 0 && lines[i].Number == lines[i + 1].Number &&
+                !lines[i].addNumber && !lines[i + 1].addNumber)
+            {
+                lines[i].Number = lines[i].Number * 2;
+                lines[i + 1].Number = 0;
+                lines[i].addNumber = true;
+                emptyCells.Add(lines[i + 1]);
                 return true;
             }
         }
@@ -71,12 +80,20 @@ public class GamePlayManager : Singleton<GamePlayManager> {
     {
         for (int i = lines.Length - 1; i > 0; i--)
         {
-            Debug.Log(lines[i].Number + " i  up");
-            Debug.Log(lines[i - 1].Number + " i+1 up");
             if (lines[i].Number == 0 && lines[i - 1].Number != 0)
             {
                 lines[i].Number = lines[i - 1].Number;
                 lines[i - 1].Number = 0;
+                return true;
+            }
+
+            if(lines[i].Number!=0&&lines[i].Number==lines[i-1].Number&&
+                !lines[i].addNumber && !lines[i - 1].addNumber)
+            {
+                lines[i].Number = lines[i].Number * 2;
+                lines[i - 1].Number = 0;
+                lines[i].addNumber = true;
+                emptyCells.Add(lines[i - 1]);
                 return true;
             }
         } 
@@ -87,12 +104,15 @@ public class GamePlayManager : Singleton<GamePlayManager> {
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            Debug.Log(emptyCells.Count);
             InitEmptyCellList();
         }
     }
 
     public void Move(MoveDirection move)
     {
+        foreach (Cell c in allCells)
+            c.ResetAddNumberFlag();
         for (int i = 0; i < cellRows.Count; i++)
         {
             switch (move)
