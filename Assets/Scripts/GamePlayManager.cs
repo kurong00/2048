@@ -5,33 +5,36 @@ public class GamePlayManager : Singleton<GamePlayManager> {
 
     Cell[,] allCells = new Cell[4,4];
     List<Cell> emptyCells = new List<Cell>();
+    List<Cell[]> cellRows = new List<Cell[]>();
+    List<Cell[]> cellCols = new List<Cell[]>();
     void Start()
     {
         InitCell();
+        InitCellRowAndCols();
     }
 
     void InitCell()
     {
-        
         Cell[] cellList = GameObject.FindObjectsOfType<Cell>();
-        /*for(int i = 0; i < 4; i++)
-        {int temp = 0;
-            for(int j = 0; j < 4; j++)
-            {
-                cellList[temp].row = i;
-                cellList[temp].col = j;
-                cellList[temp].Number = 0;
-                allCells[i, j] = cellList[temp];
-                emptyCells.Add(cellList[temp]);
-                temp++;
-            }
-        }*/
         foreach(Cell c in cellList)
         {
             c.Number = 0;
             allCells[c.row, c.col] = c;
             emptyCells.Add(c);
         }
+    }
+
+    void InitCellRowAndCols()
+    {
+        cellCols.Add(new Cell[] { allCells[0, 0], allCells[1, 0], allCells[2, 0], allCells[3, 0] });
+        cellCols.Add(new Cell[] { allCells[0, 1], allCells[1, 1], allCells[2, 1], allCells[3, 1] });
+        cellCols.Add(new Cell[] { allCells[0, 2], allCells[1, 2], allCells[2, 2], allCells[3, 2] });
+        cellCols.Add(new Cell[] { allCells[0, 3], allCells[1, 3], allCells[2, 3], allCells[3, 3] });
+
+        cellRows.Add(new Cell[] { allCells[0, 0], allCells[0, 1], allCells[0, 2], allCells[0, 3] });
+        cellRows.Add(new Cell[] { allCells[1, 0], allCells[1, 1], allCells[1, 2], allCells[1, 3] });
+        cellRows.Add(new Cell[] { allCells[2, 0], allCells[2, 1], allCells[2, 2], allCells[2, 3] });
+        cellRows.Add(new Cell[] { allCells[3, 0], allCells[3, 1], allCells[3, 2], allCells[3, 3] });
     }
 
     void InitEmptyCellList()
@@ -48,6 +51,38 @@ public class GamePlayManager : Singleton<GamePlayManager> {
         }
     }
 
+    bool DownMove(Cell[] lines)
+    {
+        for(int i = 0; i < lines.Length - 1; i++)
+        {
+            Debug.Log(lines[i].Number+" i down");
+            Debug.Log(lines[i + 1].Number + " i+1 down");
+            if (lines[i].Number == 0 && lines[i + 1].Number != 0)
+            {
+                lines[i].Number = lines[i + 1].Number;
+                lines[i + 1].Number = 0;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    bool UpMove(Cell[] lines)
+    {
+        for (int i = lines.Length - 1; i > 0; i--)
+        {
+            Debug.Log(lines[i].Number + " i  up");
+            Debug.Log(lines[i - 1].Number + " i+1 up");
+            if (lines[i].Number == 0 && lines[i - 1].Number != 0)
+            {
+                lines[i].Number = lines[i - 1].Number;
+                lines[i - 1].Number = 0;
+                return true;
+            }
+        } 
+        return false;
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -58,6 +93,23 @@ public class GamePlayManager : Singleton<GamePlayManager> {
 
     public void Move(MoveDirection move)
     {
-        Debug.Log(move.ToString());
+        for (int i = 0; i < cellRows.Count; i++)
+        {
+            switch (move)
+            {
+                case MoveDirection.Down:
+                    while (UpMove(cellCols[i])) { }
+                    break;
+                case MoveDirection.Left:
+                    while (DownMove(cellRows[i])) { }
+                    break;
+                case MoveDirection.Right:
+                    while (UpMove(cellRows[i])) { }
+                    break;
+                case MoveDirection.Up:
+                    while (DownMove(cellCols[i])) { }
+                    break;
+            }
+        }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Cell : MonoBehaviour {
 
-    [HideInInspector]
+
     public int row,col;
     int number;
     Text cellText;
