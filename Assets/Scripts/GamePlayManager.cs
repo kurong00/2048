@@ -12,6 +12,8 @@ public class GamePlayManager : Singleton<GamePlayManager> {
     {
         InitCell();
         InitCellRowAndCols();
+        AddNewCell();
+        AddNewCell();
     }
 
     void InitCell()
@@ -38,17 +40,32 @@ public class GamePlayManager : Singleton<GamePlayManager> {
         cellRows.Add(new Cell[] { allCells[3, 0], allCells[3, 1], allCells[3, 2], allCells[3, 3] });
     }
 
-    void InitEmptyCellList()
+    void AddNewCell()
     {
         if (emptyCells.Count > 0)
         {
             int index = Random.Range(0, emptyCells.Count);
             int random = Random.Range(0, 10);
-            if (random == 0)
-                emptyCells[index].Number = 4;
-            else
-                emptyCells[index].Number = 2;
+            if (emptyCells[index].Number == 0)
+            {
+                if (random == 0)
+                    emptyCells[index].Number = 4;
+                else
+                    emptyCells[index].Number = 2;
+            }
             emptyCells.RemoveAt(index);
+        }
+    }
+
+    void ClearEmptyCellList()
+    {
+        emptyCells.Clear();
+        foreach(Cell c in allCells)
+        {
+            if (c.Number==0)
+            {
+                emptyCells.Add(c);
+            }
         }
     }
 
@@ -100,15 +117,6 @@ public class GamePlayManager : Singleton<GamePlayManager> {
         return false;
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log(emptyCells.Count);
-            InitEmptyCellList();
-        }
-    }
-
     public void Move(MoveDirection move)
     {
         foreach (Cell c in allCells)
@@ -131,5 +139,7 @@ public class GamePlayManager : Singleton<GamePlayManager> {
                     break;
             }
         }
+        ClearEmptyCellList();
+        AddNewCell();
     }
 }
