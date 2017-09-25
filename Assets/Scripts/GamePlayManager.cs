@@ -18,6 +18,7 @@ public class GamePlayManager : Singleton<GamePlayManager>{
     ScoreManager scoreManager;
     public Text gameOverScore;
     public GameObject gameOverPanel;
+    
 
     void Start()
     {
