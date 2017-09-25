@@ -22,7 +22,7 @@ public abstract class Singleton<T> : MonoBehaviour where T:Singleton<T> {
                     go = new GameObject(name);
                 }
                 instance = go.AddComponent<T>();
-                DontDestroyOnLoad(go);
+                //DontDestroyOnLoad(go);
             }
         }
         return instance;

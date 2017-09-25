@@ -1,19 +1,50 @@
 ﻿using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
-
-public class GamePlayManager : Singleton<GamePlayManager> {
+using UnityEngine.UI;
+public enum MoveDirection
+{
+    Left,
+    Right,
+    Up,
+    Down
+}
+public class GamePlayManager : Singleton<GamePlayManager>{
 
     Cell[,] allCells = new Cell[4,4];
     List<Cell> emptyCells = new List<Cell>();
     List<Cell[]> cellRows = new List<Cell[]>();
     List<Cell[]> cellCols = new List<Cell[]>();
+    ScoreManager scoreManager;
+    public Text gameOverScore;
+    public GameObject gameOverPanel;
 
     void Start()
     {
+        scoreManager = ScoreManager.Instance();
         InitCell();
         InitCellRowAndCols();
         AddNewCell();
-        AddNewCell();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+             Move(MoveDirection.Left);
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+             Move(MoveDirection.Right);
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+             Move(MoveDirection.Up);
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+             Move(MoveDirection.Down);
+        }
     }
 
     void InitCell()
@@ -69,6 +100,11 @@ public class GamePlayManager : Singleton<GamePlayManager> {
         }
     }
 
+    public void LoadNewGame()
+    {
+        SceneManager.LoadScene("Game");
+    }
+
     bool DownMove(Cell[] lines)
     {
         for(int i = 0; i < lines.Length - 1; i++)
@@ -87,6 +123,7 @@ public class GamePlayManager : Singleton<GamePlayManager> {
                 lines[i + 1].Number = 0;
                 lines[i].addNumber = true;
                 emptyCells.Add(lines[i + 1]);
+                scoreManager.Score += lines[i].Number;
                 return true;
             }
         }
@@ -111,9 +148,41 @@ public class GamePlayManager : Singleton<GamePlayManager> {
                 lines[i - 1].Number = 0;
                 lines[i].addNumber = true;
                 emptyCells.Add(lines[i - 1]);
+                scoreManager.Score += lines[i].Number;
                 return true;
             }
         } 
+        return false;
+    }
+    void GameOver()
+    {
+        gameOverScore.text = scoreManager.Score.ToString();
+        gameOverPanel.SetActive(true);
+    }
+
+    bool CanMove()
+    {
+        if (emptyCells.Count > 0)
+            return true;
+        else
+        {
+            for(int i = 0; i < cellCols.Count; i++)
+            {
+                for(int j = 0; j < cellRows.Count - 1; j++)
+                {
+                    if (allCells[j, i].Number == allCells[j + 1, i].Number)
+                        return true;
+                }
+            }
+            for (int i = 0; i < cellRows.Count; i++)
+            {
+                for (int j = 0; j < cellCols.Count - 1; j++)
+                {
+                    if (allCells[i, j].Number == allCells[i, j + 1].Number)
+                        return true;
+                }
+            }
+        }
         return false;
     }
 
@@ -141,5 +210,7 @@ public class GamePlayManager : Singleton<GamePlayManager> {
         }
         ClearEmptyCellList();
         AddNewCell();
+        if (!CanMove())
+            GameOver();
     }
 }
