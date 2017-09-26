@@ -17,7 +17,9 @@ public class GamePlayManager : Singleton<GamePlayManager>{
     List<Cell[]> cellCols = new List<Cell[]>();
     ScoreManager scoreManager;
     public Text gameOverScore;
+    public Text wonScore;
     public GameObject gameOverPanel;
+    public GameObject wonPanel;
     int delay = 0;
     bool[] moveCompleteFlag = new bool[4] { true, true, true, true };
 
@@ -122,6 +124,8 @@ public class GamePlayManager : Singleton<GamePlayManager>{
             if (lines[i].Number != 0 && lines[i].Number == lines[i + 1].Number &&
                 !lines[i].addNumber && !lines[i + 1].addNumber)
             {
+                if (lines[i].Number == 8192)
+                    WinGame();
                 lines[i].Number = lines[i].Number * 2;
                 lines[i + 1].Number = 0;
                 lines[i].addNumber = true;
@@ -148,6 +152,8 @@ public class GamePlayManager : Singleton<GamePlayManager>{
             if(lines[i].Number!=0&&lines[i].Number==lines[i-1].Number&&
                 !lines[i].addNumber && !lines[i - 1].addNumber)
             {
+                if (lines[i].Number == 8192)
+                    WinGame();
                 lines[i].Number = lines[i].Number * 2;
                 lines[i - 1].Number = 0;
                 lines[i].addNumber = true;
@@ -163,6 +169,14 @@ public class GamePlayManager : Singleton<GamePlayManager>{
     {
         gameOverScore.text = scoreManager.Score.ToString();
         gameOverPanel.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    void WinGame()
+    {
+        wonScore.text = scoreManager.Score.ToString();
+        wonPanel.SetActive(true);
+        Time.timeScale = 0;
     }
 
     bool CanMove()
