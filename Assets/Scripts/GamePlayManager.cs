@@ -18,7 +18,8 @@ public class GamePlayManager : Singleton<GamePlayManager>{
     ScoreManager scoreManager;
     public Text gameOverScore;
     public GameObject gameOverPanel;
-    
+    int delay = 0;
+    bool[] moveCompleteFlag = new bool[4] { true, true, true, true };
 
     void Start()
     {
@@ -217,4 +218,12 @@ public class GamePlayManager : Singleton<GamePlayManager>{
         if (!CanMove())
             GameOver();
     }
+
+    /*IEnumerator DownMoveCoroutine(Cell[] c,int delay)
+    {
+        while (UpMove(c))
+        {
+            yield return new WaitForSeconds(delay);
+        }
+    }*/
 }
