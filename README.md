@@ -9,7 +9,9 @@
 ![image](https://github.com/kurong00/2048/blob/master/demo.gif )  
 
 **动画：** 
+
 Unity的Animation
 
 **Scripts：** 
-TouchManager:获得Android手机上的触摸消息
+
+1.TouchManager: 获得Android手机上的触摸消息
