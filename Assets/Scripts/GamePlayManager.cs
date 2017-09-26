@@ -85,6 +85,7 @@ public class GamePlayManager : Singleton<GamePlayManager>{
                 else
                     emptyCells[index].Number = 2;
             }
+            emptyCells[index].SetAnimatorAppear();
             emptyCells.RemoveAt(index);
         }
     }
@@ -123,6 +124,7 @@ public class GamePlayManager : Singleton<GamePlayManager>{
                 lines[i].Number = lines[i].Number * 2;
                 lines[i + 1].Number = 0;
                 lines[i].addNumber = true;
+                lines[i].SetAnimatorMerge();
                 emptyCells.Add(lines[i + 1]);
                 scoreManager.Score += lines[i].Number;
                 return true;
@@ -148,6 +150,7 @@ public class GamePlayManager : Singleton<GamePlayManager>{
                 lines[i].Number = lines[i].Number * 2;
                 lines[i - 1].Number = 0;
                 lines[i].addNumber = true;
+                lines[i].SetAnimatorMerge();
                 emptyCells.Add(lines[i - 1]);
                 scoreManager.Score += lines[i].Number;
                 return true;

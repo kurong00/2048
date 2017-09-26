@@ -12,6 +12,7 @@ public class Cell : MonoBehaviour {
     Text cellText;
     Image cellBackground;
     CellStyleHolder cellStyleHolder;
+    Animator anim;
 
     public int Number
     {
@@ -36,9 +37,20 @@ public class Cell : MonoBehaviour {
 
     private void Awake()
     {
+        anim = GetComponent<Animator>();
         cellBackground = transform.GetChild(0).GetComponent<Image>();
         cellText = transform.GetChild(1).GetComponent<Text>();
         cellStyleHolder = CellStyleHolder.Instance();
+    }
+
+    public void SetAnimatorAppear()
+    {
+        anim.SetTrigger("Appear");
+    }
+
+    public void SetAnimatorMerge()
+    {
+        anim.SetTrigger("Merge");
     }
 
     void GetCellStyle(int index)
