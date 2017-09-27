@@ -55,13 +55,17 @@ public class Cell : MonoBehaviour {
 
     void GetCellStyle(int index)
     {
-        cellBackground.color = cellStyleHolder.cellStyle[index].cellColor;
-        cellText.color = cellStyleHolder.cellStyle[index].textColor;
-        cellText.text = cellStyleHolder.cellStyle[index].number.ToString();
+        int i = index % 12;
+        cellBackground.color = cellStyleHolder.cellStyle[i].cellColor;
+        cellText.color = cellStyleHolder.cellStyle[i].textColor;
+        cellText.text = cellStyleHolder.cellStyle[i].number.ToString();
+        cellText.fontSize = 160 - i / 12 * 20;
     }
 
     void ChangeCellStyle(int index)
     {
+        if (index > 8192)
+            index = index / 8192;
         switch (index)
         {
             case 2:

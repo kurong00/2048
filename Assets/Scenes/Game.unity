@@ -1569,6 +1569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cellStyle:
   - number: 0
+    textSize: 0
     cellColor:
       serializedVersion: 2
       rgba: 11979743
@@ -1576,6 +1577,7 @@ MonoBehaviour:
       serializedVersion: 2
       rgba: 5270910
   - number: 2
+    textSize: 0
     cellColor:
       serializedVersion: 2
       rgba: 0
@@ -1583,6 +1585,7 @@ MonoBehaviour:
       serializedVersion: 2
       rgba: 0
   - number: 0
+    textSize: 0
     cellColor:
       serializedVersion: 2
       rgba: 0
@@ -1590,6 +1593,7 @@ MonoBehaviour:
       serializedVersion: 2
       rgba: 0
   - number: 0
+    textSize: 0
     cellColor:
       serializedVersion: 2
       rgba: 0
@@ -1597,6 +1601,7 @@ MonoBehaviour:
       serializedVersion: 2
       rgba: 0
   - number: 0
+    textSize: 0
     cellColor:
       serializedVersion: 2
       rgba: 0
@@ -1604,6 +1609,7 @@ MonoBehaviour:
       serializedVersion: 2
       rgba: 0
   - number: 0
+    textSize: 0
     cellColor:
       serializedVersion: 2
       rgba: 0
@@ -1611,6 +1617,7 @@ MonoBehaviour:
       serializedVersion: 2
       rgba: 0
   - number: 0
+    textSize: 0
     cellColor:
       serializedVersion: 2
       rgba: 0
@@ -1618,6 +1625,7 @@ MonoBehaviour:
       serializedVersion: 2
       rgba: 0
   - number: 0
+    textSize: 0
     cellColor:
       serializedVersion: 2
       rgba: 0
@@ -1625,6 +1633,7 @@ MonoBehaviour:
       serializedVersion: 2
       rgba: 0
   - number: 0
+    textSize: 0
     cellColor:
       serializedVersion: 2
       rgba: 0
@@ -1632,6 +1641,7 @@ MonoBehaviour:
       serializedVersion: 2
       rgba: 0
   - number: 0
+    textSize: 0
     cellColor:
       serializedVersion: 2
       rgba: 0
@@ -1639,6 +1649,7 @@ MonoBehaviour:
       serializedVersion: 2
       rgba: 0
   - number: 0
+    textSize: 0
     cellColor:
       serializedVersion: 2
       rgba: 0
@@ -1646,6 +1657,7 @@ MonoBehaviour:
       serializedVersion: 2
       rgba: 0
   - number: 0
+    textSize: 0
     cellColor:
       serializedVersion: 2
       rgba: 0
@@ -1653,6 +1665,7 @@ MonoBehaviour:
       serializedVersion: 2
       rgba: 0
   - number: 0
+    textSize: 0
     cellColor:
       serializedVersion: 2
       rgba: 0
@@ -5288,7 +5301,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 2266f5a92c58bd244b11205a731ce932, type: 3}
-    m_FontSize: 160
+    m_FontSize: 140
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -5299,7 +5312,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2014
+  m_Text: 16384
 --- !u!222 &1506503589
 CanvasRenderer:
   m_ObjectHideFlags: 0

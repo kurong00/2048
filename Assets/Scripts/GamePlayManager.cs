@@ -98,7 +98,7 @@ public class GamePlayManager : Singleton<GamePlayManager>{
         emptyCells.Clear();
         foreach(Cell c in allCells)
         {
-            if (c.Number==0)
+            if (c.Number == 0)
             {
                 emptyCells.Add(c);
             }
@@ -124,8 +124,8 @@ public class GamePlayManager : Singleton<GamePlayManager>{
             if (lines[i].Number != 0 && lines[i].Number == lines[i + 1].Number &&
                 !lines[i].addNumber && !lines[i + 1].addNumber)
             {
-                if (lines[i].Number == 8192)
-                    WinGame();
+                /*if (lines[i].Number == 8192)
+                    WinGame();*/
                 lines[i].Number = lines[i].Number * 2;
                 lines[i + 1].Number = 0;
                 lines[i].addNumber = true;
@@ -152,8 +152,8 @@ public class GamePlayManager : Singleton<GamePlayManager>{
             if(lines[i].Number!=0&&lines[i].Number==lines[i-1].Number&&
                 !lines[i].addNumber && !lines[i - 1].addNumber)
             {
-                if (lines[i].Number == 8192)
-                    WinGame();
+                /*if (lines[i].Number == 8192)
+                    WinGame();*/
                 lines[i].Number = lines[i].Number * 2;
                 lines[i - 1].Number = 0;
                 lines[i].addNumber = true;
